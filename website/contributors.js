@@ -25,6 +25,11 @@ async function fetchContributors() {
 
             container.appendChild(card);
         });
+
+        // Initialize 3D Tilt Effect for new cards
+        if (typeof TiltEffect !== 'undefined') {
+            new TiltEffect('.contributor-card');
+        }
     } catch (error) {
         container.innerHTML = `<p style="color: #ef4444;">Unable to load contributors at this time.</p>`;
         console.error(error);
